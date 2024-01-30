@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>HomeWork</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand m-1 p-1" href="HomeWork_WebResponsive.html">ricky.blogspot.com</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="HomeWork_WebResponsive.html">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Artikel">Artikel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Galeri">Galeri</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="image-container">
+        <img src="assets/gunung.jpg" alt="Gunung" class="image" id="movingImage1">
+        <img src="assets/pulau.jpg" alt="Pantai" class="image" id="movingImage2">
+        <img src="assets/air terjun.jpg" alt="Raja Ampat" class="image" id="movingImage3">
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        let images = document.querySelectorAll('.image');
+
+        function showNextImage() {
+            images[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.display = 'block';
+            setTimeout(showNextImage, 3000);
+        }
+
+        for (let i = 1; i < images.length; i++) {
+            images[i].style.display = 'none';
+        }
+
+        setTimeout(showNextImage, 3000);
+    </script>
+
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="col-12">
+                <h1 id="Artikel">Artikel Pesona Indonesia</h1>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="assets/candi borobudur.jpg" class="card-img-top img-fluid" alt="Article Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Candi Borobudur</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
+                            repellendus consequuntur itaque quisquam fuga quis hic ratione! Sunt ullam tempora repellat
+                            magnam dolorem dicta aliquid similique, saepe beatae debitis odio?</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="assets/danau toba.jpg" class="card-img-top img-fluid" alt="Article Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Danau Toba</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt neque
+                            praesentium impedit, fugit ipsam, cumque soluta ipsa in repellat necessitatibus atque! Quasi
+                            asperiores id neque eos? Amet harum voluptates ipsum.</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="assets/pulau komodo.jpg" class="card-img-top img-fluid" alt="Article Image 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Pulau Komodo</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium cum
+                            vel error omnis porro reprehenderit, harum placeat rem praesentium accusantium ipsam iste
+                            repellat consequatur! Dolor temporibus quo iure explicabo enim?</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="assets/taman laut bunaken.jpg" class="card-img-top img-fluid" alt="Article Image 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Taman Laut Bunaken</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptas,
+                            cumque in voluptates maiores sit? Aliquid excepturi quidem necessitatibus totam dolores
+                            fugit porro. Rerum culpa minus ratione aliquid quisquam. Nobis.</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="assets/raja ampat.jpg" class="card-img-top img-fluid" alt="Article Image 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Raja Ampat</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veritatis ea
+                            error dolorum! Blanditiis tempora sapiente ea perspiciatis ad molestiae magni. Officia
+                            praesentium necessitatibus eligendi rerum distinctio cupiditate molestias mollitia?</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="assets/Bukit Rimpi.jpeg" class="card-img-top img-fluid" alt="Article Image 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Bukit Rimpi</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, assumenda
+                            voluptatibus rerum magnam esse vitae. Eius porro ullam dolor odio perferendis. Laudantium
+                            expedita sequi quibusdam cupiditate nihil veniam, excepturi necessitatibus?</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="col-12">
+                <h1 id="Galeri">Galeri Pesona Indonesia</h1>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="container" style="align-items: center;">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="image-container">
+                        <div class="gallery-box">
+                            <img src="assets/candi borobudur.jpg" alt="Gallery image 1"
+                                class="img-cover img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="image-container">
+                        <div class="gallery-box">
+                            <img src="assets/danau toba.jpg" alt="Gallery image 2" class="img-cover img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="image-container">
+                        <div class="gallery-box">
+                            <img src="assets/pulau komodo.jpg" alt="Gallery image 3"
+                                class="img-cover img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="image-container">
+                        <div class="gallery-box">
+                            <img src="assets/taman laut bunaken.jpg" alt="Gallery image 4"
+                                class="img-cover img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="image-container">
+                        <div class="gallery-box">
+                            <img src="assets/raja ampat.jpg" alt="Gallery image 5" class="img-cover img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="image-container">
+                        <div class="gallery-box">
+                            <img src="assets/Bukit Rimpi.jpeg" alt="Gallery image 6"
+                                class="img-cover img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer py-3 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <p>© 2024 ricky.blogspot.com All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center">
+                <p>"Awali perjalananmu dengan tekad kuat." - Lao Tzu</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>
