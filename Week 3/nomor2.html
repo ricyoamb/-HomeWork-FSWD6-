@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Nomor 2</title>
+</head>
+
+<body>
+    <script>
+        let jenisKendaraan;
+
+        while (true) {
+            jenisKendaraan = prompt("Apakah Kendaraan anda platkuning/motor (Y/N) : ");
+
+            if (jenisKendaraan === "Y" || jenisKendaraan === "N") {
+                break;
+            } else {
+                alert("Tolong pilih Y/N");
+            }
+        }
+
+        function jenisBBM(jenisKendaraan) {
+            if (jenisKendaraan === "Y") {
+                alert(`BBM yang dipakai adalah BBM Subsidi`);
+            } else {
+                let jenisBensin = parseInt(prompt("Masukkan CC mobil anda : "));
+                bbmtidakSubsidi(jenisBensin);
+            }
+        }
+
+        function bbmtidakSubsidi(jenisBensin) {
+            while (isNaN(jenisBensin) || jenisBensin <= 0) {
+                alert(`Masukkan CC mobil yang benar`);
+                jenisBensin = parseInt(prompt("Masukkan CC mobil anda : "));
+            }
+
+            if (jenisBensin < 1500) {
+                alert(`Mobil dengan CC ${jenisBensin} akan memakai Pertamax`);
+            } else if (jenisBensin >= 1500) {
+                alert(`Mobil dengan CC ${jenisBensin} akan memakai Pertamax Turbo`);
+            }
+        }
+
+        jenisBBM(jenisKendaraan);
+    </script>
+</body>
+
+</html>

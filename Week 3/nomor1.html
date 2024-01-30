@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Nomor 1</title>
+</head>
+
+<body>
+    <script>
+        let suhuAir;
+
+        while (true) {
+            suhuAir = parseInt(prompt("Masukkan suhu air dalam °C : "));
+            if (suhuAir >= -100 && suhuAir <= 500) {
+                break;
+            }
+            else {
+                alert(`Suhu tidak terdefinisi`);
+            }
+        }
+
+
+        function kondisiAir(suhuAir) {
+            if (suhuAir >= -100 && suhuAir <= 0) {
+                return alert(`Jika suhu air = ${suhuAir}°C maka air dalam keadaan Beku`);
+            } else if (suhuAir >= 1 && suhuAir <= 100) {
+                return alert(`Jika suhu air = ${suhuAir}°C maka air dalam keadaan Cair`);
+            } else if (suhuAir >= 101 && suhuAir <= 500) {
+                return alert(`Jika suhu air = ${suhuAir}°C maka air dalam keadaan Uap`);
+            }
+        }
+        kondisiAir(suhuAir);
+    </script>
+</body>
+
+</html>
