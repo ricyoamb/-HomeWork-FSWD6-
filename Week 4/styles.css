@@ -1,0 +1,28 @@
+.h3,
+h2 {
+  min-height: 4rem;
+  margin: auto;
+  padding: auto;
+  margin-bottom: -19px;
+}
+
+#arrGanjil,
+#arrGenap {
+  min-height: 4em;
+  word-wrap: break-word;
+  margin: auto;
+  padding: auto;
+  
+}
+
+.needBorder {
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+.text-center,
+h1{
+  margin: auto;
+  padding: auto;
+  word-wrap: break-word;
+}
