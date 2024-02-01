@@ -3,28 +3,28 @@ document.title = "Tugas Week 4";
 document.write('<script src="arrayBilangan.js"></script>');
 
 function clearData() {
-  arrayGanjil = [];
-  arrayGenap = [];
-  _total = { totalGanjil: 0, totalGenap: 0 };
-  _avg = { avgGanjil: 0, avgGenap: 0 };
-  _min = { minGanjil: 0, minGenap: 0 };
-  _max = { maxGanjil: 0, maxGenap: 0 };
+  arrayEven = [];
+  arrayOdd = [];
+  _sum = { sumEven: 0, sumOdd: 0 };
+  _avg = { avgEven: 0, avgOdd: 0 };
+  _min = { minEven: 0, minOdd: 0 };
+  _max = { maxEven: 0, maxOdd: 0 };
 
   let clearElement = [
-    "arrGanjil",
-    "arrGenap",
-    "totalarrGanjil",
-    "totalarrGenap",
-    "avgarrGanjil",
-    "avgarrGenap",
-    "minarrGanjil",
-    "minarrGenap",
-    "maxarrGanjil",
-    "maxarrGenap",
-    "bandingTotal",
-    "bandingavg",
-    "bandingmin",
-    "bandingmax",
+    "arrEven",
+    "arrOdd",
+    "sumarrEven",
+    "sumarrOdd",
+    "avgarrEven",
+    "avgarrOdd",
+    "minarrEven",
+    "minarrOdd",
+    "maxarrEven",
+    "maxarrOdd",
+    "comSum",
+    "comAvg",
+    "comMin",
+    "comMax",
   ];
 
   clearElement.forEach(function (elementId) {
@@ -33,25 +33,25 @@ function clearData() {
 }
 
 function run() {
-  arrBilangan();
+  numArray();
 
-  _total = totalArray(arrayGanjil, arrayGenap); 
-  _avg = avgArray(arrayGanjil, arrayGenap);
-  _min = minArray(arrayGanjil, arrayGenap);
-  _max = maxArray(arrayGanjil, arrayGenap);
+  _sum = sumArray(arrayEven, arrayOdd); 
+  _avg = avgArray(arrayEven, arrayOdd);
+  _min = minArray(arrayEven, arrayOdd);
+  _max = maxArray(arrayEven, arrayOdd);
 
-  document.getElementById("arrGanjil").textContent = arrayGanjil.join(', ');
-  document.getElementById("arrGenap").textContent = arrayGenap.join(', ');
-  document.getElementById("totalarrGanjil").textContent = _total.totalGanjil;
-  document.getElementById("totalarrGenap").textContent = _total.totalGenap;
-  document.getElementById("avgarrGanjil").textContent = _avg.avgGanjil;
-  document.getElementById("avgarrGenap").textContent = _avg.avgGenap;
-  document.getElementById("minarrGanjil").textContent = _min.minGanjil;
-  document.getElementById("minarrGenap").textContent = _min.minGenap;
-  document.getElementById("maxarrGanjil").textContent = _max.maxGanjil;
-  document.getElementById("maxarrGenap").textContent = _max.maxGenap;
-  document.getElementById("bandingTotal").textContent = bandingTotal(_total);
-  document.getElementById("bandingavg").textContent = bandingAvg(_avg);
-  document.getElementById("bandingmin").textContent = bandingMin(_min);
-  document.getElementById("bandingmax").textContent = bandingMax(_max);
+  document.getElementById("arrEven").textContent = arrayEven.join(', ');
+  document.getElementById("arrOdd").textContent = arrayOdd.join(', ');
+  document.getElementById("sumarrEven").textContent = _sum.sumEven;
+  document.getElementById("sumarrOdd").textContent = _sum.sumOdd;
+  document.getElementById("avgarrEven").textContent = _avg.avgEven;
+  document.getElementById("avgarrOdd").textContent = _avg.avgOdd;
+  document.getElementById("minarrEven").textContent = _min.minEven;
+  document.getElementById("minarrOdd").textContent = _min.minOdd;
+  document.getElementById("maxarrEven").textContent = _max.maxEven;
+  document.getElementById("maxarrOdd").textContent = _max.maxOdd;
+  document.getElementById("comSum").textContent = comSum(_sum);
+  document.getElementById("comAvg").textContent = comAvg(_avg);
+  document.getElementById("comMin").textContent = comMin(_min);
+  document.getElementById("comMax").textContent = comMax(_max);
 }

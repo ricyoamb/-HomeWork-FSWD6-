@@ -6,8 +6,8 @@ h2 {
   margin-bottom: -19px;
 }
 
-#arrGanjil,
-#arrGenap {
+#arrEven,
+#arrOdd {
   min-height: 4em;
   word-wrap: break-word;
   margin: auto;
