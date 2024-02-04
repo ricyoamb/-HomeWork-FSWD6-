@@ -3,7 +3,7 @@ let arrayOdd = [];
 
 function numArray() {
   while (arrayEven.length < 50 || arrayOdd.length < 50) {
-    let numberArray = Math.ceil(Math.random() * 100);
+    let numberArray = Math.ceil(Math.random() * 50);
 
     if (numberArray % 2 === 0 && arrayOdd.length < 50) arrayOdd.push(numberArray);
     if (numberArray % 2 === 1 && arrayEven.length < 50) arrayEven.push(numberArray);
