@@ -18,17 +18,42 @@ class RegistrationForm {
       };
 
       this.registrations.push(registration);
-      alert("Data berhasil ditambahkan");
+      this.showMyAlert();
       this.displayData();
     } catch (error) {
-      alert(error);
+      this.showMyError(error);
     }
+  }
+
+  showMyError(error) {
+    let errorMessages = document.getElementById("alertMessages");
+    errorMessages.textContent = `Error : ${error}`;
+
+    let myAlert = document.getElementById("myAlert");
+    myAlert.classList.add("show");
+
+    setTimeout(function () {
+      myAlert.classList.remove("show");
+    }, 3000);
+  }
+
+  showMyAlert() {
+    let alertMessages = document.getElementById("alertMessages");
+    alertMessages.textContent = `Data berhasil ditambahkan`;
+    myAlert.classList.add("show");
+
+    setTimeout(function () {
+      myAlert.classList.remove("show");
+    }, 3000);
   }
 
   checkInput(personName, personAge, personMoney) {
     return new Promise((resolve, reject) => {
-      if (personName.length > 25) {
-        reject("Nama tidak boleh lebih dari 25 karakter.");
+      if (!personName || !personAge || !personMoney) {
+        reject("Isi data yang kosong");
+      }
+      if (personName.length > 10) {
+        reject("Nama tidak boleh lebih dari 10 karakter.");
       }
 
       if (isNaN(personAge) || personAge < 25) {
@@ -36,7 +61,9 @@ class RegistrationForm {
       }
 
       if (isNaN(personMoney) || personMoney < 100000 || personMoney > 1000000) {
-        reject("Masukkan jumlah uang antara seratus ribu sampai satu juta.");
+        reject(
+          "Masukkan jumlah uang minimal Rp. 100.000 dan maksimal Rp. 1.000.000."
+        );
       }
 
       resolve();
@@ -75,25 +102,33 @@ class RegistrationForm {
     let averageAge = totalAge / this.registrations.length;
     let averageMoney = totalMoney / this.registrations.length;
 
-    let avgAge = document.getElementById("averageAge");
-    let avgMoney = document.getElementById("averageMoney");
+    let resumeData = document.getElementById("resumeData");
 
-    avgAge.textContent = averageAge.toFixed(2) + " Tahun";
-    avgMoney.textContent =
-      "Rp. " + parseFloat(averageMoney.toFixed(2)).toLocaleString("id-ID");
+    resumeData.textContent = `Rata - Rata Pendaftar Memiliki Uang Sangu Sebesar Rp. ${parseFloat(
+      averageMoney.toFixed(2)
+    ).toLocaleString("id-ID")} Dengan Rata - Rata Umur ${averageAge.toFixed(
+      2
+    )} Tahun`;
   }
-}
+  resetTable() {
+    let tableBody = document.getElementById("tableBody");
+    let resumeData = document.getElementById("resumeData");
 
-function resetTable() {
-  let tableBody = document.getElementById("tableBody");
-  let averageAge = document.getElementById("averageAge");
-  let averageMoney = document.getElementById("averageMoney");
+    tableBody.innerHTML = "";
+    resumeData.textContent = "No Data";
+    this.registrations = [];
 
-  tableBody.innerHTML = "";
-  averageAge.innerHTML = "";
-  averageMoney.innerHTML = "";
+    this.showMyAlertReset();
+  }
+  showMyAlertReset() {
+    let alertMessages = document.getElementById("alertMessages2");
+    alertMessages.textContent = `Data berhasil dihapus`;
+    myAlertReset.classList.add("show");
 
-  alert("Semua Data Dibersihkan");
+    setTimeout(function () {
+      myAlertReset.classList.remove("show");
+    }, 3000);
+  }
 }
 
 const registrationForm = new RegistrationForm("Registration Form");

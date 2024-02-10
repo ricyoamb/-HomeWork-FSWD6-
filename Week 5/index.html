@@ -18,6 +18,9 @@
             <div class="container mt-5">
                 <div class="row justify-content-center">
                     <div class="col-md-6">
+                        <div id="myAlert" class="alert alert-warning alert-dismissible fade" role="alert">
+                            <strong><span id="alertMessages"></span></strong>
+                        </div>
                         <form>
                             <div class="card">
                                 <div class="card-body">
@@ -51,6 +54,9 @@
             <div class="container mt-3">
                 <div class="row">
                     <div class="col-md-6 mx-auto">
+                        <div id="myAlertReset" class="alert alert-warning alert-dismissible fade" role="alert">
+                            <strong><span id="alertMessages2"></span></strong>
+                        </div>
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="text-center">
@@ -65,16 +71,14 @@
                                 <tr>
                                     <td colspan="4">
                                         <b>
-                                            Rata-Rata Pendaftar Memiliki Uang Sangu Sebesar
-                                            <span id="averageMoney"></span>
-                                            Dengan Rata Rata Umur
-                                            <span id="averageAge"></span>
+                                            <div id="resumeData">No Data</div>
                                         </b>
                                     </td>
                                 </tr>
                             </tfoot>
                         </table>
-                        <button type="submit" class="btn btn-primary" onclick="resetTable()">Reset</button>
+                        <button type="submit" class="btn btn-primary"
+                            onclick="registrationForm.resetTable()">Reset</button>
                     </div>
                 </div>
             </div>
