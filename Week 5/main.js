@@ -53,7 +53,7 @@ class RegistrationForm {
         reject("Isi data yang kosong");
       }
       if (personName.length > 10) {
-        reject("Nama tidak boleh lebih dari 10 karakter.");
+        reject("Nama minimal 10 karakter.");
       }
 
       if (isNaN(personAge) || personAge < 25) {
